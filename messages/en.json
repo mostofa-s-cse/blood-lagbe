@@ -26,6 +26,35 @@
       "requests": "Requests Fulfilled",
       "organizations": "Verified Organizations"
     },
+    "search": {
+      "bloodGroup": "Blood Group",
+      "location": "Location",
+      "locationPlaceholder": "City, e.g. Dhaka",
+      "anyBloodGroup": "Any blood group",
+      "button": "Search Donors"
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "step1": {
+        "title": "Create your profile",
+        "desc": "Sign up as a donor or blood seeker in under a minute."
+      },
+      "step2": {
+        "title": "Get matched",
+        "desc": "Search donors by blood group and location, or get found for a request."
+      },
+      "step3": {
+        "title": "Donate & track",
+        "desc": "Respond to requests, track status to completion, and save a life."
+      }
+    },
+    "forWhom": {
+      "title": "Built for everyone in the chain",
+      "donor": "Register once, get matched to nearby requests automatically.",
+      "seeker": "Post a request and track it from pending to donor found.",
+      "org": "Manage verified requests for your hospital or organization.",
+      "admin": "Verify organizations and keep the network trustworthy."
+    },
     "features": {
       "title": "Why Blood Lagbe",
       "search": {
