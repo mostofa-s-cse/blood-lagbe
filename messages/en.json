@@ -48,6 +48,26 @@
         "desc": "Respond to requests, track status to completion, and save a life."
       }
     },
+    "tips": {
+      "title": "Before You Donate",
+      "subtitle": "A few simple habits make donation safer and easier for you.",
+      "tip1": {
+        "title": "Eat iron-rich food",
+        "desc": "Leafy greens, meat, and lentils in the days before donating."
+      },
+      "tip2": {
+        "title": "Stay hydrated",
+        "desc": "Drink plenty of water the day before and the day of donation."
+      },
+      "tip3": {
+        "title": "Skip alcohol",
+        "desc": "Avoid alcohol for at least 24 hours before you donate."
+      },
+      "tip4": {
+        "title": "Rest afterwards",
+        "desc": "Take it easy and eat well for the rest of the day."
+      }
+    },
     "forWhom": {
       "title": "Built for everyone in the chain",
       "donor": "Register once, get matched to nearby requests automatically.",
