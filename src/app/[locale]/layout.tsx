@@ -7,8 +7,6 @@ import { routing } from "@/i18n/routing"
 import { StoreProvider } from "@/store/provider"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { Toaster } from "@/components/ui/sonner"
-import { SiteNav } from "@/components/site-nav"
-import { SiteFooter } from "@/components/site-footer"
 import "../globals.css"
 
 const geistSans = Geist({
@@ -55,13 +53,11 @@ export default async function LocaleLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full">
         <NextIntlClientProvider>
           <StoreProvider>
             <TooltipProvider>
-              <SiteNav />
-              <main className="flex-1">{children}</main>
-              <SiteFooter />
+              {children}
               <Toaster />
             </TooltipProvider>
           </StoreProvider>

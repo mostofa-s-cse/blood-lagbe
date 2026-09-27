@@ -1,17 +1,18 @@
 import { getTranslations } from "next-intl/server"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { LayoutDashboard } from "lucide-react"
+import { EmptyState } from "@/components/empty-state"
 
 export default async function AdminPage() {
   const t = await getTranslations()
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>{t("nav.admin")}</CardTitle>
-      </CardHeader>
-      <CardContent className="text-muted-foreground">
-        {t("common.comingSoon")}
-      </CardContent>
-    </Card>
+    <div>
+      <h1 className="mb-6 text-2xl font-bold">{t("nav.admin")}</h1>
+      <EmptyState
+        icon={LayoutDashboard}
+        title={t("nav.admin")}
+        description={t("common.comingSoon")}
+      />
+    </div>
   )
 }

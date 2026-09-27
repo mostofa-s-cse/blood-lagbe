@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl"
 import { LayoutDashboard, Users, Building2, ListChecks } from "lucide-react"
 import { AppSidebarShell, type SidebarNavItem } from "@/components/app-sidebar-shell"
+import { DashboardTopbarActions } from "@/components/dashboard-topbar-actions"
 
 export function AdminShell({ children }: { children: React.ReactNode }) {
   const t = useTranslations("nav")
@@ -15,7 +16,11 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
   ]
 
   return (
-    <AppSidebarShell title={t("admin")} items={items}>
+    <AppSidebarShell
+      sectionLabel={t("admin")}
+      items={items}
+      actions={<DashboardTopbarActions />}
+    >
       {children}
     </AppSidebarShell>
   )

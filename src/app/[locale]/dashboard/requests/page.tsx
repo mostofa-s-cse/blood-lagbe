@@ -1,17 +1,18 @@
 import { getTranslations } from "next-intl/server"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { ListChecks } from "lucide-react"
+import { EmptyState } from "@/components/empty-state"
 
 export default async function RequestsPage() {
   const t = await getTranslations()
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>{t("dashboard.requests")}</CardTitle>
-      </CardHeader>
-      <CardContent className="text-muted-foreground">
-        {t("common.comingSoon")}
-      </CardContent>
-    </Card>
+    <div>
+      <h1 className="mb-6 text-2xl font-bold">{t("dashboard.requests")}</h1>
+      <EmptyState
+        icon={ListChecks}
+        title={t("dashboard.requests")}
+        description={t("common.comingSoon")}
+      />
+    </div>
   )
 }

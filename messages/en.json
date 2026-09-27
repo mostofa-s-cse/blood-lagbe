@@ -93,6 +93,9 @@
   "contact": {
     "title": "Contact Us",
     "subtitle": "Questions, feedback or partnership requests — send us a message.",
+    "point1": "We typically reply within 24 hours",
+    "point2": "Serving donors and hospitals across Bangladesh",
+    "point3": "Your message stays private and is never shared",
     "form": {
       "name": "Name",
       "email": "Email",
@@ -103,6 +106,13 @@
     }
   },
   "auth": {
+    "panel": {
+      "title": "Every drop counts.",
+      "subtitle": "Join a network of donors, seekers, and hospitals working together to make blood available when it matters most.",
+      "point1": "Verified donors, real-time availability",
+      "point2": "Emergency requests reach the right people fast",
+      "point3": "Free for donors, seekers, and hospitals"
+    },
     "login": {
       "title": "Log in",
       "subtitle": "Welcome back to Blood Lagbe",
@@ -152,6 +162,7 @@
   },
   "dashboard": {
     "welcome": "Welcome back",
+    "overview": "Overview",
     "profile": "My Profile",
     "search": "Search Donors",
     "requests": "Blood Requests",
