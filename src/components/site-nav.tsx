@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server"
+import { Droplet } from "lucide-react"
 import { Link } from "@/i18n/navigation"
 import { getCurrentAuthUser } from "@/lib/current-user"
 import { LocaleSwitcher } from "@/components/locale-switcher"
@@ -13,7 +14,11 @@ export async function SiteNav() {
   return (
     <header className="border-b bg-background/80 backdrop-blur sticky top-0 z-40">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
-        <Link href="/" className="text-lg font-bold text-primary">
+        <Link
+          href="/"
+          className="flex items-center gap-1.5 text-lg font-bold text-primary"
+        >
+          <Droplet className="size-5 fill-primary" />
           Blood Lagbe
         </Link>
 
