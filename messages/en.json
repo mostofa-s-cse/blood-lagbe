@@ -1,0 +1,140 @@
+{
+  "meta": {
+    "title": "Blood Lagbe",
+    "description": "A centralized platform for blood donation and emergency donor management"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "search": "Find Donors",
+    "login": "Log in",
+    "signup": "Sign up",
+    "dashboard": "Dashboard",
+    "logout": "Log out",
+    "admin": "Admin"
+  },
+  "home": {
+    "hero": {
+      "title": "One platform to find blood donors, fast.",
+      "subtitle": "Blood Lagbe connects donors, patients, hospitals and organizations in a single, always up-to-date network — built for emergencies.",
+      "ctaSearch": "Find a Donor",
+      "ctaJoin": "Become a Donor"
+    },
+    "stats": {
+      "donors": "Registered Donors",
+      "requests": "Requests Fulfilled",
+      "organizations": "Verified Organizations"
+    },
+    "features": {
+      "title": "Why Blood Lagbe",
+      "search": {
+        "title": "Smart Donor Search",
+        "desc": "Filter donors by blood group, location and availability in seconds."
+      },
+      "emergency": {
+        "title": "Emergency Requests",
+        "desc": "Mark a request urgent and reach matching donors faster."
+      },
+      "tracking": {
+        "title": "Request Tracking",
+        "desc": "Follow every request from pending to donation completed."
+      },
+      "org": {
+        "title": "Hospitals & Organizations",
+        "desc": "Verified hospitals and blood organizations manage requests directly."
+      }
+    },
+    "cta": {
+      "title": "Ready to save a life?",
+      "subtitle": "Register as a donor today — your blood group could be exactly what someone needs tomorrow.",
+      "button": "Join Now"
+    }
+  },
+  "about": {
+    "title": "About Blood Lagbe",
+    "intro": "Blood Lagbe is a centralized blood donation and emergency donor management platform, built to replace scattered Facebook groups, phone calls and outdated donor lists with one organized system.",
+    "missionTitle": "Our Mission",
+    "mission": "Make finding a suitable blood donor faster, easier and more reliable — especially when time matters most.",
+    "problemTitle": "The Problem",
+    "problem": "Fragmented searching, outdated donor information, emergency delays and no centralized tracking make it hard to find the right donor at the right time.",
+    "solutionTitle": "Our Solution",
+    "solution": "A single platform for donor registration, smart search, blood requests, emergency alerts, and hospital/organization management."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Questions, feedback or partnership requests — send us a message.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send Message",
+      "success": "Message sent. We'll get back to you soon.",
+      "error": "Something went wrong. Please try again."
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Log in",
+      "subtitle": "Welcome back to Blood Lagbe",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Log in",
+      "noAccount": "Don't have an account?",
+      "signupLink": "Sign up",
+      "error": "Invalid email or password."
+    },
+    "signup": {
+      "title": "Create an account",
+      "subtitle": "Join the Blood Lagbe network",
+      "name": "Full name",
+      "phone": "Phone number",
+      "email": "Email",
+      "password": "Password",
+      "role": "I am a",
+      "roleDonor": "Blood Donor",
+      "roleSeeker": "Blood Seeker",
+      "roleOrg": "Hospital / Organization",
+      "submit": "Sign up",
+      "hasAccount": "Already have an account?",
+      "loginLink": "Log in",
+      "error": "Could not create account. Please try again."
+    }
+  },
+  "roles": {
+    "DONOR": "Donor",
+    "SEEKER": "Blood Seeker",
+    "ORG": "Hospital / Organization",
+    "ADMIN": "Admin"
+  },
+  "bloodGroups": {
+    "label": "Blood Group"
+  },
+  "profile": {
+    "title": "My Donor Profile",
+    "subtitle": "Keep your donor information up to date so seekers can find you.",
+    "bloodGroup": "Blood Group",
+    "location": "Location / City",
+    "available": "Available to donate",
+    "lastDonationDate": "Last donation date",
+    "save": "Save Profile",
+    "saved": "Profile saved.",
+    "notCreatedYet": "You haven't set up your donor profile yet."
+  },
+  "dashboard": {
+    "welcome": "Welcome back",
+    "profile": "My Profile",
+    "search": "Search Donors",
+    "requests": "Blood Requests",
+    "myRequests": "My Requests",
+    "notifications": "Notifications"
+  },
+  "common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "yes": "Yes",
+    "no": "No",
+    "comingSoon": "Coming soon in the next milestone."
+  }
+}

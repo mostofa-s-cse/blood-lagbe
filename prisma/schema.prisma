@@ -1,0 +1,131 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+enum Role {
+  DONOR
+  SEEKER
+  ORG
+  ADMIN
+}
+
+enum BloodGroup {
+  A_POS
+  A_NEG
+  B_POS
+  B_NEG
+  AB_POS
+  AB_NEG
+  O_POS
+  O_NEG
+}
+
+enum RequestStatus {
+  PENDING
+  DONOR_FOUND
+  COMPLETED
+  CANCELLED
+}
+
+enum OrgType {
+  HOSPITAL
+  NGO
+}
+
+/// Mirrors a Supabase auth.users row (id is the Supabase auth user id).
+model User {
+  id        String   @id
+  email     String   @unique
+  name      String
+  phone     String?
+  role      Role
+  verified  Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  donorProfile     DonorProfile?
+  organization     Organization?
+  bloodRequests    BloodRequest[]  @relation("RequesterRequests")
+  donationHistory  DonationHistory[]
+  notifications    Notification[]
+}
+
+model DonorProfile {
+  id              String     @id @default(uuid())
+  userId          String     @unique
+  user            User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  bloodGroup      BloodGroup
+  location        String
+  available       Boolean    @default(true)
+  lastDonationDate DateTime?
+  donationCount   Int        @default(0)
+  updatedAt       DateTime   @updatedAt
+
+  @@index([bloodGroup, location])
+}
+
+model Organization {
+  id       String  @id @default(uuid())
+  userId   String  @unique
+  user     User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  orgName  String
+  orgType  OrgType
+  verified Boolean @default(false)
+
+  bloodRequests BloodRequest[] @relation("OrgRequests")
+}
+
+model BloodRequest {
+  id            String        @id @default(uuid())
+  requesterId   String
+  requester     User          @relation("RequesterRequests", fields: [requesterId], references: [id], onDelete: Cascade)
+  organizationId String?
+  organization  Organization? @relation("OrgRequests", fields: [organizationId], references: [id], onDelete: SetNull)
+
+  bloodGroup    BloodGroup
+  bagsNeeded    Int
+  hospital      String
+  location      String
+  patientInfo   String
+  contactInfo   String
+  isEmergency   Boolean       @default(false)
+  status        RequestStatus @default(PENDING)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  donations     DonationHistory[]
+  notifications Notification[]
+
+  @@index([bloodGroup, location, status])
+  @@index([isEmergency, status])
+}
+
+model DonationHistory {
+  id         String       @id @default(uuid())
+  donorId    String
+  donor      User         @relation(fields: [donorId], references: [id], onDelete: Cascade)
+  requestId  String?
+  request    BloodRequest? @relation(fields: [requestId], references: [id], onDelete: SetNull)
+  donatedAt  DateTime     @default(now())
+  location   String
+
+  @@index([donorId])
+}
+
+model Notification {
+  id        String        @id @default(uuid())
+  userId    String
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  requestId String?
+  request   BloodRequest? @relation(fields: [requestId], references: [id], onDelete: SetNull)
+  message   String
+  read      Boolean       @default(false)
+  createdAt DateTime      @default(now())
+
+  @@index([userId, read])
+}
